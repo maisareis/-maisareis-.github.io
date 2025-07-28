@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteio da Pizza 🍕</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    #alerta {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 8px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🍕 Sorteio da Pizza</h2>
+  <p>Para entrar no sorteio da pizza, digite seu nome ou e-mail:</p>
+
+  <input type="text" id="entrada" placeholder="Seu nome ou e-mail" required />
+  <br />
+  <button onclick="mostrarAlerta()">Participar</button>
+
+  <div id="alerta">
+    <h3>🔒 Atenção!</h3>
+    <p>
+      Nunca escaneie QR Codes desconhecidos só por curiosidade.<br />
+      Sempre confirme a origem e evite cair em golpes digitais.
+    </p>
+  </div>
+
+  <script>
+    function mostrarAlerta() {
+      const entrada = document.getElementById("entrada").value.trim();
+      if (entrada === "") {
+        alert("Por favor, preencha seu nome ou e-mail.");
+        return;
+      }
+      document.getElementById("alerta").style.display = "block";
+    }
+  </script>
+</body>
+</html>
